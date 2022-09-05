@@ -81,7 +81,8 @@ python src/release/postdeploy/add_demo_data.py # (extras) if you want to add som
 ```sh
 python worker.py # it works only with WORKER_TYPE=2
 python jobs/hourly --train-only # train the model
-python jobs/hourly # start forecasting
+python jobs/hourly --freq-hourly # start forecasting measures with frequency hourly (H)
+python jobs/hourly --freq-daily # start forecasting measures with frequency daily (D)
 rq info --interval 0.5 # monitoring the Redis queue
 ```
 - Authenticate MLimit with a Salesforce Org
