@@ -29,6 +29,11 @@ This project is composed by multiple layers
 3. Import the [Connect configuration](https://devcenter.heroku.com/articles/managing-heroku-connect-mappings#import-and-export-of-mappings) using the file mlimit_hc_config.json.json in the folder /extra
 4. Take note of the SECRET_KEY in Config Vars
 5. Go to the Salesforce Org, change the password in the Named Credential "mlimitcore" and complete the configuration on the Salesforce Home Page "Mlimit Home". More here [mlimit-sf](https://github.com/MaurizioBella/mlimit-sf)
+6. Run the following post deploy configuration script
+
+```sh
+heroku run -a mlimit -- python src/release/postdeploy/alter_db_tables.py
+```
 
 
 ### Jobs schedule
